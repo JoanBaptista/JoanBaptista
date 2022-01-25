@@ -1495,9 +1495,9 @@ Public Sub Bt_Calcul_Result_Click()
       NumericUpDownCPU_Hz.Foreground = Color.RGB(0, 0, 0)
       NumericUpDownMhz.Foreground = Color.RGB(0, 0, 0)
     End If
-    If nPuntuacio_Total > 999 And ChB_RAM_MB.Value = False And NumericUpDownRAM.Value < 6 Then
-      ' Menys de 6 GB RAM en PC's que per la resta podrien tenir Windows 11 els baixa a grup Windows 10
-      ' Less than 6 GB of RAM on PCs that otherwise could have Windows 11 downgrades to Windows 10
+    If nPuntuacio_Total > 999 And ChB_RAM_MB.Value = False And NumericUpDownRAM.Value < 8 Then
+      ' Menys de 8 GB RAM en PC's que per la resta podrien tenir Windows 11 els baixa a grup Windows 10
+      ' Less than 8 GB of RAM on PCs that otherwise could have Windows 11 downgrades to Windows 10
       nPuntuacio_Total = 999
       If ChB_Min_Win.Value = True And RB_Win11.Value = True Then
         NumericUpDownRAM.Foreground = Color.RGB(255, 0, 0)
@@ -1506,7 +1506,7 @@ Public Sub Bt_Calcul_Result_Click()
         NumericUpDownRAM.Foreground = Color.RGB(0, 0, 0)
         NumericUpDownRAM_MB.Foreground = Color.RGB(0, 0, 0)
       End If
-    Else If nPuntuacio_Total > 999 And ChB_Min_Win.Value = True And RB_Win11.Value = True And ChB_RAM_MB.Value = False And NumericUpDownRAM.Value > 5 Then
+    Else If nPuntuacio_Total > 999 And ChB_Min_Win.Value = True And RB_Win11.Value = True And ChB_RAM_MB.Value = False And NumericUpDownRAM.Value >= 8 Then
       NumericUpDownRAM.Foreground = Color.RGB(0, 0, 0)
       NumericUpDownRAM_MB.Foreground = Color.RGB(0, 0, 0)
     End If
